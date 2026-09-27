@@ -1,0 +1,41 @@
+
+@import "tailwindcss";
+@layer base{
+    .ul-link{
+        @apply cursor-pointer text-white transition duration-300 font-medium hover:text-[#6b6b7a];
+    }
+    .ul-link-mobile{
+        @apply py-4 block border-b border-white/10 w-full;
+    }
+}
+
+@keyframes randomGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  font-size: 2.25rem; /* text-4xl equivalent */
+  font-weight: 700;   /* font-bold equivalent */
+  cursor: pointer;
+  background: linear-gradient(135deg, #84a87e, #5a7556, #283526);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: randomGradient 3s linear infinite;
+}

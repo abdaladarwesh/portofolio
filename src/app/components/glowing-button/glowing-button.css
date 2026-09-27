@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-gradient {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@layer components {
+  .glowing-border {
+    position: relative;
+  }
+
+  .glowing-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--angle),
+      #050807,
+      #0a3d2e,
+      #061412,
+      #39ff14,
+      #0d2b1f,
+      #050807
+    );
+    animation: spin-gradient 3s linear infinite;
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+}

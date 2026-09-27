@@ -1,0 +1,49 @@
+<nav
+    class="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[92vw] sm:w-[88vw] md:w-[80vw] h-20 md:h-[12vh] px-5 sm:px-8 md:px-10 py-3 md:py-5 rounded-2xl md:rounded-3xl border-2 border-[#7d7d7d20] backdrop-blur-xl dark:bg-[#03020282] shadow-[0_0_5px_0_#00000025] dark:shadow-[inset_0_2px_4px_0_rgba(255,255,255,0.2)]">
+    <h1 (click)="scrollToAnchor('home')" class="animated-gradient-text">
+        Abdullah</h1>
+    <ul class="flex items-center gap-5 max-lg:hidden">
+        <li class="ul-link" (click)="scrollToAnchor('home')">Home</li>
+        <li class="ul-link" (click)="scrollToAnchor('skills')">Skills</li>
+        <li class="ul-link" (click)="scrollToAnchor('stats')">My stats</li>
+        <li class="ul-link" (click)="scrollToAnchor('experience')">Experience</li>
+        <li class="ul-link" (click)="scrollToAnchor('projects')">Featured Projects</li>
+    </ul>
+    <div (click)="scrollToAnchor('contact')">
+        <app-glowing-button [buttonContent]='"Contact me"'></app-glowing-button>
+    </div>
+    <div class="lg:hidden p-1 rounded-md hover:bg-white/20" (click)="openNavMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="size-8" fill="#e3e3e3">
+            <path d="M140-254.62v-59.99h680v59.99H140ZM140-450v-60h680v60H140Zm0-195.39v-59.99h680v59.99H140Z" />
+        </svg>
+    </div>
+</nav>
+
+@if (isOpened()) {
+<div
+    class="backdrop-blur-md w-screen h-screen fixed top-0 left-0 z-10000 p-4 bg-[#1a1a1a]/50 flex flex-col justify-between">
+    <div class="flex justify-between items-center">
+        <h1 routerLink="/"
+            class="text-primary font-bold text-4xl transition duration-300 hover:text-tertiary cursor-pointer">
+            Abdullah</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-8 rounded-md hover:bg-white/20 transition duration-300"
+            (click)="closeNavMenu()" viewBox="0 -960 960 960" fill="#e3e3e3">
+            <path
+                d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+        </svg>
+    </div>
+    <ul class="flex flex-col items-start mt-10 text-xl flex-1">
+        <li class="ul-link ul-link-mobile" (click)="scrollToAnchorInMobile('home')">Home</li>
+        <li class="ul-link ul-link-mobile" (click)="scrollToAnchorInMobile('skills')">Skills</li>
+        <li class="ul-link ul-link-mobile" (click)="scrollToAnchorInMobile('stats')">My stats</li>
+        <li class="ul-link ul-link-mobile" (click)="scrollToAnchorInMobile('experience')">Experience</li>
+        <li class="ul-link ul-link-mobile" (click)="scrollToAnchorInMobile('projects')">Featured Projects</li>
+
+    </ul>
+    <div (click)="scrollToAnchorInMobile('contact')">
+
+        <app-glowing-button [isMobile]="false" [buttonContent]='"Contact me"'></app-glowing-button>
+    </div>
+</div>
+
+}

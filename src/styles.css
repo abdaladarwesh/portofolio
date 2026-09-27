@@ -1,3 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import 'tailwindcss';
+
+body {
+  background-color: #111417;
+}
+
+* {
+  font-family: 'IBM Plex Sans', sans-serif;
+  scroll-behavior: smooth;
+  /* border: 1px solid red; */
+}
+
+@theme {
+  --color-primary: #84a87e;
+  --color-secondry: #5a7556;
+  --color-tertiary: #283526;
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    filter: blur(4px); /* Optional: adds a soft cinematic touch */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+.reveal-item {
+  opacity: 0;
+  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-item-1 {
+  animation-delay: 0.1s;
+}
+.delay-item-2 {
+  animation-delay: 0.25s;
+}
+.delay-item-3 {
+  animation-delay: 0.4s;
+}
+.delay-item-4 {
+  animation-delay: 0.5s;
+}
+.delay-item-5 {
+  animation-delay: 0.8s;
+}
+.delay-item-6 {
+  animation-delay: 0.9s;
+}
+.delay-item-7 {
+  animation-delay: 1s;
+}
+.delay-item-8 {
+  animation-delay: 1.2s;
+}
+.delay-item-9 {
+  animation-delay: 1.3s;
+}
+.delay-item-10 {
+  animation-delay: 1.5s;
+}

@@ -1,0 +1,20 @@
+<div id="projects" class="flex flex-col justify-around items-center w-full px-10 mt-20">
+    <div appRevealOnScroll class="flex w-full justify-between items-end delay-item-1">
+        <div>
+            <h3 class="text-primary text-md font-semibold">Featured Projects</h3>
+            <h1 class="text-white font-semibold text-4xl">Crafted for Impact & Scalability</h1>
+        </div>
+        <a href="https://github.com/abdaladarwesh" target="_blank" class="flex items-center justify-center relative before:absolute before:left-0 before:bottom-0 before:w-0 before:h-0.5 before:bg-secondry before:transition-all before:duration-300 hover:before:w-full transition duration-300 before:content-[''] cursor-pointer">
+            <h3 class="text-secondry">View all reositories on GitHub</h3>
+            <span [style.color]="'#5a7556'" class="material-symbols-outlined">
+                arrow_right_alt
+            </span>
+        </a>
+
+    </div>
+    <div class="flex w-full items-center justify-around overflow-x-scroll gap-5 mt-10 scrollbar-none">
+        @for (project of projectsService.project; track $index) {
+            <app-project-card class="delay-item-4" appRevealOnScroll [liveUrl]="project.liveLink!" [isLive]="project.isLive" [githubLink]="project.githubLink" [technologies]="project.technologies" [img]="project.mainImage" [type]="project.type" [headline]="project.title" [body]="project.body"></app-project-card>
+        }
+    </div>
+</div>
